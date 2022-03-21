@@ -1,0 +1,21 @@
+$querey = mysqli_query($conn, 'SELECT LearnerClass FROM registered_learners WHERE LearnerID like "%'. $id . '%"');
+$row = mysqli_fetch_array($querey);
+if ($row) {
+
+	print($row['LearnerClass']);
+	$lc = $row["LearnerClass"];
+} else {
+	print("NOT FOUND");
+}
+
+
+
+if($learnerclass == "1"){
+  header("Location:maths1learner.php");
+} else if($learnerclass == "2") {
+  header("Location:maths2learner.php");
+} else {
+
+header("Location:maths3learner.php")
+
+}
