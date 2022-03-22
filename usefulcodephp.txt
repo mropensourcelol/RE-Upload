@@ -1,3 +1,10 @@
+$querey1 = mysqli_query($conn, 'SELECT * FROM registered_learners WHERE LearnerUsername like "%'. $_SESSION['name'] . '%"');
+$row = mysqli_fetch_array($querey1);
+$id = $row["LearnerID"];
+
+
+
+
 $querey = mysqli_query($conn, 'SELECT LearnerClass FROM registered_learners WHERE LearnerID like "%'. $id . '%"');
 $row = mysqli_fetch_array($querey);
 if ($row) {
@@ -18,4 +25,24 @@ if($learnerclass == "1"){
 
 header("Location:maths3learner.php")
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+if(empty($_SESSION))
+{
+  header("Location: /mypage.php");
+}
+else
+{
+    // do something ....
 }
