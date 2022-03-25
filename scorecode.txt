@@ -1,0 +1,15 @@
+SELECT LearnerScore FROM quiz_results WHERE LearnerID = ...
+
+
+$row['LearnerID'}
+
+$learnerScoreArray = []
+
+for($i=0; $i<$studentCount; $i++){
+	$sql = <<<SQL
+	SELECT LearnerScore FROM quiz_results WHERE LearnerID = $i
+	SQL;
+	$result = $db->query($sql);
+	$row = $result->fetch_assoc();
+	array_push($learnerScoreArray, $row);
+}
