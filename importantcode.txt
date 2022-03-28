@@ -1,0 +1,33 @@
+Mine 
+//////////////////////////////////////////
+SELECT 
+registered_tutors.TutorID, registered_tutors.TutorFullname, registered_learners.LearnerFullname, quiz_results.Quiz_Description, quiz_results.Quiz_Score
+from 
+registered_tutors
+left join registered_learners on registered_learners.LearnerClass 
+left join quiz_results on quiz_results.Learner_ID = registered_learners.LearnerID
+where 
+registered_tutors.TutorID = 1
+
+order by registered_learners.LearnerFullname;
+///////////////////////////////////////
+
+
+
+
+
+Johns :-
+//////////////////////////////////////////////
+
+SELECT 
+    teachers.ID, teachers.Fullname, registered_learners.LearnerFullname, quiz_results.Quiz_Description, quiz_results.Quiz_Score
+FROM
+    teachers
+LEFT JOIN registered_learners ON registered_learners.LearnerClass = teachers.LearnerClass
+LEFT JOIN quiz_results on quiz_results.learner_ID = registered_learners.LearnerID
+WHERE
+teachers.ID = {$id}
+ORDER BY registered_learners.LearnerFullname
+/////////////////////////////////////////////////
+
+
